@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Angry Gandalf</title>
+</head>
+<body>
+	<h2>Angry Gandalf</h2>
+	<input type = "text" placeholder="which gandalf?" id="gandalfInput" /><button id="submit">Submit</button>
+	<div id="gandalfInput"></div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+				/**
+		 * Exercise 0: angryGandalf (example)
+		**/
+		
+		// Define angryGandalf with input parameters
+		function angryGandalf (type) {
+		  // Define the variables needed
+		  // Run conditional on type for 'grey' and 'white'
+		  	if (type === 'grey') {
+		  		return "YOU...SHALL NOT... PASS!";
+		  	} else if (type === 'white') {
+		  		return "You merely passed me to your demise.";
+		  	} else {
+		  		return "I don't think I'm Gandalf anymore.";
+		  	}
+		  // Return message
+		}
+		console.assert(angryGandalf('grey') === "YOU...SHALL NOT... PASS!");
+		console.assert(angryGandalf('white') === "You merely passed me to your demise.");
+		console.assert(angryGandalf(2) === "I don't think I'm Gandalf anymore.");
+
+		$("submit").on('click', function() {
+			var input = $("#gandalfInput").val();
+		});
+	</script>
+</body>
+</html>
