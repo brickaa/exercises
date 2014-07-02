@@ -1,15 +1,22 @@
 <html>
 <head>
 	<title>My Life-Line</title>
+	<style type="text/css">
+	input {
+		display: block;
+		width: 100%;
+	}
+	</style>
 </head>
-<body>
-
-</body>
-</html>
-
-
-
-<script>
+<body>	
+	<input type="text" placeholder="What do you do for a living?" id="job" />
+	<input type="text" placeholder="Where are you from?" id="hometown" />
+	<input type="text" placeholder="What is your spouse's name?" id="partnerName" />
+	<input type="text" placeholder="How many children do you have?" id="numChildren" />
+	<button id="submit">Submit</button>
+	<div id="fortune"></div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
 /**
  * @exercise 1 - lifeLine
  * @description takes children, partner's name, hometown, and job
@@ -39,10 +46,21 @@
   // Return that string
   		return fortune;
 	};
-console.log(lifeLine('apple taster', 'Spain', 'Shaq', 3));
+	console.log(lifeLine('apple taster', 'Spain', 'Shaq', 3));
 
-console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq with 3 kids.' ); 
-console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling with 3000 kids.');
-console.assert(lifeLine('Elvis impersonator', 'Russia', 'The Oatmeal', 0) === 'You are a Elvis impersonator from Russia and married to The Oatmeal with 0 kids.') ; 
+	console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq with 3 kids.' ); 
+	console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling with 3000 kids.');
+	console.assert(lifeLine('Elvis impersonator', 'Russia', 'The Oatmeal', 0) === 'You are a Elvis impersonator from Russia and married to The Oatmeal with 0 kids.') ; 
+
+	$("#submit").on('click', function() {
+		var job = $("#job").val();
+		var hometown = $("#hometown").val();
+		var partnerName = $("#partnerName").val();
+		var numChildren = $("#numChildren").val();
+		var fortune = lifeLine(job, hometown, partnerName, numChildren);
+		$("#fortune").html(fortune);
+	});
 
 </script>
+</body>
+</html>
