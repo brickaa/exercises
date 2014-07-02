@@ -19,11 +19,27 @@
 
 // Take 4 arguments: number of children, partner's name, hometown, job title.
 	function lifeLine(job, hometown, partnerName, numChildren) {
+		var alpha;
+		switch (job.charAt(0))
+			{
+			   case "a":
+			   case "e":
+			   case "i": 
+			   case "o":
+			   case "u": 
+			       alpha = 'an'
+			       break
+			   default: 
+			       alpha = 'a'
+			       break;
+			}
+
   // Define string variable that will have that output
-		var fortune = "You are a " + job + " from " + hometown + " and married to " + partnerName + " with " + numChildren + " kids."
+		var fortune = "You are " + alpha + " " + job + " from " + hometown + " and married to " + partnerName + " with " + numChildren + " kids."
   // Return that string
   		return fortune;
 	};
+console.log(lifeLine('apple taster', 'Spain', 'Shaq', 3));
 
 console.assert(lifeLine('bball player', 'Spain', 'Shaq', 3) === 'You are a bball player from Spain and married to Shaq with 3 kids.' ); 
 console.assert(lifeLine('stunt double', 'Japan', 'Ryan Gosling', 3000) === 'You are a stunt double from Japan and married to Ryan Gosling with 3000 kids.');
