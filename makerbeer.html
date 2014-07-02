@@ -3,7 +3,12 @@
 	<title>Exercise 2: MakerBeer</title>
 </head>
 <body>
-
+	<div>Yo kid, how old are you?</div>
+	<div>Enter your age:</div>
+	<input type="text" placeholder="Month" id="month" />
+	<input type="text" placeholder="Day" id="day" />	
+	<input type="text" placeholder="Year" id="year" />
+	<button id="submit">Submit</button>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 	/**
@@ -21,12 +26,6 @@
 	    // takes 1 argument: age.
 	    // calculate if that age is 21 or above.
 	    // Output true or false based on if the age is above age
-
-		console.assert(ofAge(21) === true);
-		console.assert(ofAge(22) === true);
-		console.assert(ofAge(18) === false);
-		console.assert(ofAge(0) === false);
-		console.assert(ofAge(-2) === false);
 
 	/**
 	 * Exercise 2 Part 2: getAge
@@ -57,11 +56,6 @@
 	        return age;
 	    }
 
-	    console.assert(calculateAge(12, 25, 1987) === 26);
-	    console.assert(calculateAge(1, 1, 2000) === 14);
-	    console.assert(calculateAge(3, 30, 1900) === 114);
-	    console.assert(calculateAge(10, 10, 1950) === 63)
-
 	/**
 	 * Exercise 2 Part 3: checkOfAge
 	**/
@@ -79,9 +73,16 @@
 	    	}
 	    };
 
-		console.assert(checkOfAge(12,01,1988) === true);
-		console.assert(checkOfAge(1,1,1993) === true);
-		console.assert(checkOfAge(1,1,2001) === false);
+	    $("#submit").on('click', function() {
+	    	var month = $("#month").val();
+	    	var day = $("#day").val();
+	    	var year = $("#year").val();
+	    	if (checkOfAge(month, day, year) === false) {
+	    		alert("Bitch get outta here!");
+	    	} else {
+	    		alert("You may pass...");
+	    	}
+	    });
 	</script>
 
 </body>
