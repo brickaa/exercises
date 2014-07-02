@@ -4,63 +4,85 @@
 </head>
 <body>
 
-<script>
-/**
- * Exercise 2 Part 1: ofAge
-**/
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	/**
+	 * Exercise 2 Part 1: ofAge
+	**/
 
-// Write a function named `ofAge` that:
-	var ofAge = function(age) {
-		if (age < 21) {
-			return false
-		} else {
-			return true
-		}
-	};
-    // takes 1 argument: age.
-    // calculate if that age is 21 or above.
-    // Output true or false based on if the age is above age
+	// Write a function named `ofAge` that:
+		var ofAge = function(age) {
+			if (age < 21) {
+				return false
+			} else {
+				return true
+			}
+		};
+	    // takes 1 argument: age.
+	    // calculate if that age is 21 or above.
+	    // Output true or false based on if the age is above age
 
-console.assert(ofAge(21) === true);
-console.assert(ofAge(22) === true);
-console.assert(ofAge(18) === false);
-console.assert(ofAge(0) === false);
-console.assert(ofAge(-2) === false);
+		console.assert(ofAge(21) === true);
+		console.assert(ofAge(22) === true);
+		console.assert(ofAge(18) === false);
+		console.assert(ofAge(0) === false);
+		console.assert(ofAge(-2) === false);
 
-/**
- * Exercise 2 Part 2: getAge
-**/
+	/**
+	 * Exercise 2 Part 2: getAge
+	**/
 
-    function calculateAge(birthMonth, birthDay, birthYear) {
+	    function calculateAge(birthMonth, birthDay, birthYear) {
 
-        // Get Todays Date
-        var todayDate = new Date(),
-            todayYear = todayDate.getFullYear(),
-            todayMonth = todayDate.getMonth(),
-            todayDay = todayDate.getDate();
+	        // Get Todays Date
+	        var todayDate = new Date(),
+	            todayYear = todayDate.getFullYear(),
+	            todayMonth = todayDate.getMonth(),
+	            todayDay = todayDate.getDate();
 
-        // Calculate Age
-        var age = todayYear - birthYear;
+	        // Calculate Age
+	        var age = todayYear - birthYear;
 
-        // Check month discrepancies
-        if (todayMonth < (birthMonth - 1)) {
-            age--;
-        }
+	        // Check month discrepancies
+	        if (todayMonth < (birthMonth - 1)) {
+	            age--;
+	        }
 
-        // Check day discrepancies
-        if (((birthMonth - 1) == todayMonth) && (todayDay < birthDay)) {
-            age--;
-        }
+	        // Check day discrepancies
+	        if (((birthMonth - 1) == todayMonth) && (todayDay < birthDay)) {
+	            age--;
+	        }
 
-        // @return {Number} age
-        return age;
-    }
+	        // @return {Number} age
+	        return age;
+	    }
 
-    console.assert(calculateAge(12, 25, 1987) === 26);
-    console.assert(calculateAge(1, 1, 2000) === 14);
-    console.assert(calculateAge(3, 30, 1900) === 114);
-    console.assert(calculateAge(10, 10, 1950) === 63)
-</script>
+	    console.assert(calculateAge(12, 25, 1987) === 26);
+	    console.assert(calculateAge(1, 1, 2000) === 14);
+	    console.assert(calculateAge(3, 30, 1900) === 114);
+	    console.assert(calculateAge(10, 10, 1950) === 63)
+
+	/**
+	 * Exercise 2 Part 3: checkOfAge
+	**/
+
+	// Write a function named `checkOfAge` that:
+	    // takes 3 arguments: month, day, year.
+	    // Use the getAge function to calculate the age.
+	    // calculate if that age is 21 or above.
+	    // Output true or false based on if the age is above age
+	    var checkOfAge = function(month, day, year) {
+	    	if (calculateAge(month, day, year) < 21) {
+	    		return false;
+	    	} else {
+	    		return true;
+	    	}
+	    };
+
+		console.assert(checkOfAge(12,01,1988) === true);
+		console.assert(checkOfAge(1,1,1993) === true);
+		console.assert(checkOfAge(1,1,2001) === false);
+	</script>
 
 </body>
 </html>
