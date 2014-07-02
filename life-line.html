@@ -29,22 +29,23 @@
 
 // Take 4 arguments: number of children, partner's name, hometown, job title.
 	function lifeLine(job, hometown, partnerName, numChildren) {
-		var alpha;
-		switch (job.charAt(0))
+		var firstLetter = job.charAt(0).toLowerCase();
+		var a;
+		switch (firstLetter)
 			{
 			   case "a":
 			   case "e":
 			   case "i": 
 			   case "o":
 			   case "u": 
-			       alpha = 'an '
+			       a = 'an '
 			       break
 			   default: 
-			       alpha = 'a '
+			       a = 'a '
 			       break;
 			}
   // Define string variable that will have that output
-		var fortune = "You are " + alpha + job + " from " + hometown + " and married to " + partnerName + " with " + numChildren + " kids."
+		var fortune = "You are " + a + job + " from " + hometown + " and married to " + partnerName + " with " + numChildren + " kids."
   // Return that string
   		return fortune;
 	};
