@@ -1,0 +1,49 @@
+/* ---------------------------------------------------------- */
+/* Float Examples for MakerSquare Front-End Class ----------- */
+/* created by Elyse Holladay @elyseholladay ----------------- */
+/* ---------------------------------------------------------- */
+
+/* Example 07 */
+
+.container {
+	width: 100%; /* change me to a percentage width, like 80% */
+	margin: 0 auto;
+}
+
+
+.header {
+	overflow: auto;
+}
+
+.logo {
+	float: left;
+}
+
+.navigation {
+	width: 65%;
+	float: right;
+}
+
+.sidebar {
+	float: left;
+	height: 300px;
+	width: 25%;
+}
+
+.main-content {
+	overflow: auto;
+}
+
+.sub-content {
+	float: right;
+	width: 65%;
+}
+
+.sub-content-2 {
+	float: right;
+	width: 65%;
+}
+
+.footer {
+	clear: both;
+}
