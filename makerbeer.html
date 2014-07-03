@@ -66,11 +66,7 @@
 	    // calculate if that age is 21 or above.
 	    // Output true or false based on if the age is above age
 	    var checkOfAge = function(month, day, year) {
-	    	if (calculateAge(month, day, year) < 21) {
-	    		return false;
-	    	} else {
-	    		return true;
-	    	}
+	    	return ofAge(calculateAge(month, day, year));
 	    };
 
 	    $("#submit").on('click', function() {
