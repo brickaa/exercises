@@ -4,11 +4,13 @@
 </head>
 <body>
 	<div>Yo kid, how old are you?</div>
-	<div>Enter your birthday (in numbers, duh):</div>
-	<input type="text" placeholder="Month" id="month" />
-	<input type="text" placeholder="Day" id="day" />	
-	<input type="text" placeholder="Year" id="year" />
-	<button id="submit">Submit</button>
+	<div>Enter your birthdate:</div>
+	<form id="bDay">
+		<input type="text" placeholder="Month" id="month" />
+		<input type="text" placeholder="Day" id="day" />	
+		<input type="text" placeholder="Year" id="year" />
+		<button id="submit">Submit</button>
+	</form>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script>
 	/**
@@ -69,7 +71,7 @@
 	    	return ofAge(calculateAge(month, day, year));
 	    };
 
-	    $("#submit").on('click', function() {
+	    $("#bDay").on('submit', function() {
 	    	var month = $("#month").val();
 	    	var day = $("#day").val();
 	    	var year = $("#year").val();
