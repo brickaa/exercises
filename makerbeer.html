@@ -75,7 +75,7 @@
 	    	var month = $("#month").val();
 	    	var day = $("#day").val();
 	    	var year = $("#year").val();
-	    	if (checkOfAge(month, day, year) === false) {
+	    	if (!checkOfAge(month, day, year)) {
 	    		alert("Bitch get outta here!");
 	    	} else {
 	    		alert("You may pass...");
