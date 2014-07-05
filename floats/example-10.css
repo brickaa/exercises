@@ -7,9 +7,22 @@
 
 .header {}
 
-.sidebar {}
+.container {
+	overflow: hidden;
+	width: 80%;
+	margin: 0 auto;
+}
+.sidebar {
+	float: left;
+	width: 33.3333%;
+	height: 300px;
+}
 
-.main-content {}
+.main-content {
+	float: left;
+	width: 66.6666%;
+	height: 300px;
+}
 
 .sub-content {}
 
