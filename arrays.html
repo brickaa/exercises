@@ -20,13 +20,11 @@ function createList() {
 	// HINT: the string should look like '<li>' + friends[x] + "</li>" + ....
 
 	for(i=0; i < friends.length; i++) {
-		var x = '<li>' + friends[i] + '</li>';
+		var x = '<li>' + friends[i] + ' <button class="unfriend" data-id=["' + i + '"]>Unfriend</button></li>';
 		list = list + x;
-		console.log(list);
 	}
 
 	list = list + '</ul>'
-	console.log(list);
 	// Use jQuery to select the body tag on the index and append the finish table string
 	$("body").append(list);
 }
@@ -36,11 +34,23 @@ function addFriend() {
 
 }
 
+function removeFriend() {
+	friends.splice(removeFriend);
+}
+
 $("#submit").on('click', function() {
 	newFriend = $("#newfriend").val();
 	addFriend(newFriend);
-	$("#list").append("<li>" + newFriend + "</li>");
+	$("#list").append('<li>' + friends[i] + ' <button class="unfriend" data-id=["' + i + '"]>Unfriend</button></li>');
 })
+
+$(document).on('click', 'button.unfriend', function(event, ui)
+{
+	var friendIndex = $(this).data('id');
+	friends.splice(friendIndex, 1);
+	$("#list").remove();
+	createList();
+});
 
 createList();
 </script>
